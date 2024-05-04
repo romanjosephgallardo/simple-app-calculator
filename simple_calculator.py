@@ -3,12 +3,17 @@
 # Ask user to choose from four math operations
 print("Welcome to Simple Calculator App! \n"
       "Let's do some math! :D")
-print("What would you like to do? \n"
-      " 1. Addition (+) \n"
-      " 2. Subtraction (-) \n"
-      " 3. Multiplication (×) \n"
-      " 4. Division (÷)")
-chosen_option = int(input("Choose an option: "))
+try:
+    print("What would you like to do? \n"
+          " 1. Addition (+) \n"
+          " 2. Subtraction (-) \n"
+          " 3. Multiplication (×) \n"
+          " 4. Division (÷)")
+    chosen_option = int(input("Choose an option: "))
+
+except ValueError:
+    print("Invalid choice. Please enter a valid number")
+    exit()
 
 # Ask user to input two numbers
 first_number = int(input("Enter your first number: "))
