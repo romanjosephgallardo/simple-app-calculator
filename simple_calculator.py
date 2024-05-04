@@ -11,6 +11,9 @@ print("What would you like to do? \n"
 chosen_option = int(input("Choose an option: "))
 
 # Ask user to input two numbers
+first_number = int(input("Enter your first number: "))
+second_number = int(input("Enter your second number"))
+
 # Display the result
 # Ask user again if they want to try again
 # If yes, repeat the process
