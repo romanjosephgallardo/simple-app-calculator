@@ -44,7 +44,7 @@ try_again = str(input("Choose an option: "))
 
 # If yes, repeat the process
 if try_again == "a":
-    exit()
+    exit()  # will change this part for looping 
 # If no, display "Thank you" and exit the program.
 else:
     print("Thank you for using Simple Calculator App! :D")
