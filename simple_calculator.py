@@ -36,15 +36,21 @@ try:
 except ZeroDivisionError:
     print("Error: Cannot divide by zero.")
 
-
 # Ask user again if they want to try again
 print("Do you want to calculate again? \n"
       " (a) Yes      (b) No")
-try_again = str(input("Choose an option: "))
+try:
+    try_again = str(input("Choose an option (a/b): "))
 
-# If yes, repeat the process
-if try_again == "a":
-    exit()  # will change this part for looping 
-# If no, display "Thank you" and exit the program.
-else:
-    print("Thank you for using Simple Calculator App! :D")
+    # If yes, repeat the process
+    if try_again == 'a':
+        exit()  # will change this part for looping
+    # If no, display "Thank you" and exit the program.
+    elif try_again == 'n':
+        print("Thank you for using Simple Calculator App! :D")
+    if try_again not in ('a', 'b'):
+        print("Invalid choice. Please enter a valid letter")
+        exit()
+
+except:
+    exit()
