@@ -11,11 +11,11 @@ try:
           " 4. Division (÷)")
     chosen_option = int(input("Choose an option: "))
 
-    if chosen_option not in range (1, 5):
+    if chosen_option not in range(1, 5):  # Validation if user enters other numbers
         print("Invalid choice. Please enter a number between 1 and 4")
         exit()
 
-except ValueError:
+except ValueError:  # If a user enters other characters
     print("Invalid choice. Please enter a valid number")
     exit()
 
