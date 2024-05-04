@@ -31,7 +31,11 @@ if chosen_option == 2:
 if chosen_option == 3:
     print(f"The product is: {first_number * second_number}")
 if chosen_option == 4:
-    print(f"The quotient is: {first_number / second_number}")
+    if second_number == 0:
+        raise ZeroDivisionError("Error: Cannot divide by zero! ")
+    else:
+        print(f"The quotient is: {first_number / second_number}")
+
 
 # Ask user again if they want to try again
 # If yes, repeat the process
