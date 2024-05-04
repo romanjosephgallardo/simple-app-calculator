@@ -41,5 +41,10 @@ except ZeroDivisionError:
 print("Do you want to calculate again? \n"
       " (a) Yes      (b) No")
 try_again = str(input("Choose an option: "))
+
 # If yes, repeat the process
+if try_again == "a":
+    exit()
 # If no, display "Thank you" and exit the program.
+else:
+    print("Thank you for using Simple Calculator App! :D")
