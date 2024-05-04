@@ -21,6 +21,8 @@ if chosen_option == 2:
     print(f"The difference is: {first_number - second_number}")
 if chosen_option == 3:
     print(f"The product is: {first_number * second_number}")
+if chosen_option == 4:
+    print(f"The quotient is: {first_number / second_number}")
 # Ask user again if they want to try again
 # If yes, repeat the process
 # If no, display "Thank you" and exit the program.
