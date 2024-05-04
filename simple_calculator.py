@@ -37,7 +37,7 @@ except ZeroDivisionError:
     print("Error: Cannot divide by zero.")
 
 # Ask user again if they want to try again
-print("Do you want to calculate again? \n"
+print("Do you want to continue? \n"
       " (a) Yes      (b) No")
 try:
     try_again = str(input("Choose an option (a/b): "))
