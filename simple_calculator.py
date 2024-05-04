@@ -38,5 +38,8 @@ except ZeroDivisionError:
 
 
 # Ask user again if they want to try again
+print("Do you want to calculate again? \n"
+      " (a) Yes      (b) No")
+try_again = str(input("Choose an option: "))
 # If yes, repeat the process
 # If no, display "Thank you" and exit the program.
