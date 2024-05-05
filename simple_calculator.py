@@ -1,12 +1,12 @@
 # pseudocode for simple calculator
 
 def welcome_message():
-    line = "—" * 40
+    line = "—" * 50
     title = "Welcome to Simple Calculator App!"
     subtitle = "Let's do some math! :D"
     print(line)
-    print(title.center(40, " "))
-    print(subtitle.center(40, " "))
+    print(title.center(50, " "))
+    print(subtitle.center(50, " "))
     print(line)
 
 
@@ -38,7 +38,7 @@ while True:
         first_number = int(input("Enter your first number: "))
         second_number = int(input("Enter your second number: "))
     except ValueError:
-        print("Invalid input. Please enter numeric values")
+        print("Invalid input. Please enter numeric values only.")
         continue
 
     # Display the result
