@@ -77,9 +77,12 @@ while True:
             # If no, display "Thank you" and exit the program.
             elif try_again == 'b':
                 print("Thank you for using Simple Calculator App! :D")
-                exit()
+                break
             if try_again not in ('a', 'b'):
                 invalid_input_message("Invalid choice. Please enter a valid letter")
                 continue
         except:
             print("An unexpected error occurred.")
+
+    if try_again == "b":  # Checks if 'b' was pressed in the inner loop
+        exit()
