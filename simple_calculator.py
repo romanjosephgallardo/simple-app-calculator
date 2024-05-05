@@ -15,6 +15,14 @@ def invalid_input_message(invalid_input):
     print(invalid_message)
 
 
+def formatted_thank_u_message(thank_u):
+    line = "—" * 50
+    thank_u_message = (f"{line} \n"
+                       f"\033[1m{thank_u.center(50)}\033[0m \n"
+                       f"{line} ")
+    print(thank_u_message)
+
+
 # Ask user to choose from four math operations
 welcome_message()
 while True:
@@ -31,7 +39,7 @@ while True:
             invalid_input_message("Invalid choice. Enter a number from 1 to 5 only.")
             continue
         if chosen_option == 5:
-            print("Thank you for using Simple Calculator App! :D")
+            formatted_thank_u_message("Thank you for using Simple Calculator App! :D")
             break
 
     except ValueError:  # If a user enters other characters
@@ -72,7 +80,7 @@ while True:
                 break
             # If no, display "Thank you" and exit the program.
             elif try_again.lower() == 'b':
-                print("Thank you for using Simple Calculator App! :D")
+                formatted_thank_u_message("Thank you for using Simple Calculator App! :D")
                 break
             # If a user enters other characters without on the given option
             if try_again not in ('a', 'b'):
