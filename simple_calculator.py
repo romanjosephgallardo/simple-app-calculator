@@ -31,7 +31,7 @@ while True:
     try:
         chosen_option = int(input(">>> Choose an option: "))
         if chosen_option not in range(1, 6):  # Validation if user enters other numbers
-            invalid_choice_message("Invalid choice. Number must be 1 to 5 ")
+            invalid_choice_message("Invalid choice. Enter a number from 1 to 5 only.")
             continue
         if chosen_option == 5:
             print("Thank you for using Simple Calculator App! :D")
@@ -46,7 +46,7 @@ while True:
         first_number = int(input(">>> Enter your first number: "))
         second_number = int(input(">>> Enter your second number: "))
     except ValueError:
-        print("Invalid input. Please enter numeric values only.")
+        invalid_choice_message("Invalid input. Please enter numeric values only.")
         continue
 
     # Display the result
@@ -77,7 +77,7 @@ while True:
             print("Thank you for using Simple Calculator App! :D")
             exit()
         if try_again not in ('a', 'b'):
-            print("Invalid choice. Please enter a valid letter")
+            invalid_choice_message("Invalid choice. Please enter a valid letter")
             continue
     except:
         exit()
