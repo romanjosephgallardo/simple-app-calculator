@@ -8,13 +8,17 @@ while True:
           " 1. Addition (+) \n"
           " 2. Subtraction (-) \n"
           " 3. Multiplication (×) \n"
-          " 4. Division (÷)")
+          " 4. Division (÷)\n"
+          " 5. Exit ")
 
     try:
         chosen_option = int(input("Choose an option: "))
-        if chosen_option not in range(1, 5):  # Validation if user enters other numbers
+        if chosen_option not in range(1, 6):  # Validation if user enters other numbers
             print("Invalid choice. Please enter a number between 1 and 4")
             continue
+        if chosen_option == 5:
+            print("Thank you for using Simple Calculator App! :D")
+            break
 
     except ValueError:  # If a user enters other characters
         print("Invalid choice. Please enter a valid number")
