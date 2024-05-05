@@ -24,6 +24,15 @@ def formatted_thank_u_message(thank_u):
                        f"{line} ")
     print(thank_u_message)
 
+
+def format_and_display_result(c_result):
+    line = "—" * 50
+    calculated_result = (f"{line} \n"
+                        f"\033[1m{c_result.center(50)}\033[0m \n"
+                        f"{line} ")
+    print(calculated_result)
+
+
 # Ask user to choose from four math operations
 welcome_message()
 while True:
@@ -58,7 +67,7 @@ while True:
     # Display the result
     if chosen_option == 1:
         result = first_number + second_number
-        print(f"{first_number} + {second_number}: {result}")
+        format_and_display_result(f"{first_number} + {second_number}: {result}")
     elif chosen_option == 2:
         print(f"The difference is: {first_number - second_number}")
     elif chosen_option == 3:
