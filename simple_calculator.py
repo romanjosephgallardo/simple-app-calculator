@@ -1,13 +1,10 @@
 # pseudocode for simple calculator
 
 def welcome_message():
-    line = "—" * 50
-    title = "Welcome to Simple Calculator App!"
-    subtitle = "Let's do some math! :D"
-    print(line)
-    print(title.center(50, " "))
-    print(subtitle.center(50, " "))
-    print(line)
+    print("—" * 50)
+    print("Welcome to Simple Calculator App!".center(50, " "))
+    print("Let's do some math! :D".center(50, " "))
+    print("—" * 50)
 
 
 def invalid_input_message(invalid_input):
