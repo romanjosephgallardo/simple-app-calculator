@@ -10,10 +10,10 @@ def welcome_message():
     print(line)
 
 
-def invalid_choice_message(invalid_choice):
+def invalid_input_message(invalid_input):
     line = "—" * 50
     invalid_message = (f"{line} \n"
-               f"\x1B[3m{invalid_choice.center(50)}\x1B[0m \n"
+               f"\x1B[3m{invalid_input.center(50)}\x1B[0m \n"
                f"{line} ")
     print(invalid_message)
 
@@ -31,14 +31,14 @@ while True:
     try:
         chosen_option = int(input(">>> Choose an option: "))
         if chosen_option not in range(1, 6):  # Validation if user enters other numbers
-            invalid_choice_message("Invalid choice. Enter a number from 1 to 5 only.")
+            invalid_input_message("Invalid choice. Enter a number from 1 to 5 only.")
             continue
         if chosen_option == 5:
             print("Thank you for using Simple Calculator App! :D")
             break
 
     except ValueError:  # If a user enters other characters
-        invalid_choice_message("Invalid choice. Please enter a valid number")
+        invalid_input_message("Invalid choice. Please enter a valid number")
         continue
 
     # Ask user to input two numbers
@@ -46,7 +46,7 @@ while True:
         first_number = int(input(">>> Enter your first number: "))
         second_number = int(input(">>> Enter your second number: "))
     except ValueError:
-        invalid_choice_message("Invalid input. Please enter numeric values only.")
+        invalid_input_message("Invalid input. Please enter numeric values only.")
         continue
 
     # Display the result
@@ -77,7 +77,7 @@ while True:
             print("Thank you for using Simple Calculator App! :D")
             exit()
         if try_again not in ('a', 'b'):
-            invalid_choice_message("Invalid choice. Please enter a valid letter")
+            invalid_input_message("Invalid choice. Please enter a valid letter")
             continue
     except:
         exit()
