@@ -26,7 +26,7 @@ while True:
             print("Invalid choice. Please enter a number between 1 and 4")
             continue
         if chosen_option == 5:
-            print(" Thank you for using Simple Calculator App! :D")
+            print("Thank you for using Simple Calculator App! :D")
             break
 
     except ValueError:  # If a user enters other characters
