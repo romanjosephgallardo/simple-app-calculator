@@ -18,7 +18,9 @@ def invalid_input_message(invalid_input):
 def formatted_thank_u_message(thank_u):
     line = "—" * 50
     thank_u_message = (f"{line} \n"
+                       f" \n "
                        f"\033[1m{thank_u.center(50)}\033[0m \n"
+                       f" \n "
                        f"{line} ")
     print(thank_u_message)
 
@@ -71,7 +73,7 @@ while True:
     # Ask user again if they want to try again
     while True:
         print(">>> Do you want to continue? \n"
-              " (a) Yes      (b) No")
+              "    (a) Yes   (b) No")
         try:
             try_again = str(input(">>> Choose an option (a/b): "))
             # If yes, repeat the process
