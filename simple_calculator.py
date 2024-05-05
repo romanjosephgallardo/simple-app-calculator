@@ -38,7 +38,7 @@ while True:
             break
 
     except ValueError:  # If a user enters other characters
-        print("Invalid choice. Please enter a valid number")
+        invalid_choice_message("Invalid choice. Please enter a valid number")
         continue
 
     # Ask user to input two numbers
@@ -77,7 +77,7 @@ while True:
             print("Thank you for using Simple Calculator App! :D")
             exit()
         if try_again not in ('a', 'b'):
-            invalid_choice_message("Invalid choice. Please enter a valid letter")
+            invalid_choice_mesgit sage("Invalid choice. Please enter a valid letter")
             continue
     except:
         exit()
