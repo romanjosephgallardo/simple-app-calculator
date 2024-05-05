@@ -64,7 +64,6 @@ while True:
             continue
 
     # Ask user again if they want to try again
-
     while True:
         print(">>> Do you want to continue? \n"
               " (a) Yes      (b) No")
@@ -78,6 +77,7 @@ while True:
             elif try_again.lower() == 'b':
                 print("Thank you for using Simple Calculator App! :D")
                 break
+            # If a user enters other characters without on the given option
             if try_again not in ('a', 'b'):
                 invalid_input_message("Invalid choice. Please enter a valid letter")
                 continue
