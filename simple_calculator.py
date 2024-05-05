@@ -72,6 +72,7 @@ while True:
             try_again = str(input(">>> Choose an option (a/b): "))
             # If yes, repeat the process
             if try_again == 'a':
+                print("-" * 50)
                 break
             # If no, display "Thank you" and exit the program.
             elif try_again == 'b':
