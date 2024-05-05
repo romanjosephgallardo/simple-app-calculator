@@ -82,4 +82,4 @@ while True:
                 invalid_input_message("Invalid choice. Please enter a valid letter")
                 continue
         except:
-            exit()
+            print("An unexpected error occurred.")
