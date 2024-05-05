@@ -54,6 +54,7 @@ while True:
         # If no, display "Thank you" and exit the program.
         elif try_again == 'b':
             print("Thank you for using Simple Calculator App! :D")
+            exit()
         if try_again not in ('a', 'b'):
             print("Invalid choice. Please enter a valid letter")
             continue
