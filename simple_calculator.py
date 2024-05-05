@@ -10,6 +10,14 @@ def welcome_message():
     print(line)
 
 
+def invalid_choice_message(invalid_choice):
+    line = "—" * 50
+    invalid_message = (f"{line} \n"
+               f"\x1B[3m{invalid_choice.center(50)}\x1B[0m \n"
+               f"{line} ")
+    print(invalid_message)
+
+
 # Ask user to choose from four math operations
 welcome_message()
 while True:
@@ -23,7 +31,7 @@ while True:
     try:
         chosen_option = int(input(">>> Choose an option: "))
         if chosen_option not in range(1, 6):  # Validation if user enters other numbers
-            print("Invalid choice. Please enter a number between 1 and 4")
+            invalid_choice_message("Invalid choice. Number must be 1 to 5 ")
             continue
         if chosen_option == 5:
             print("Thank you for using Simple Calculator App! :D")
