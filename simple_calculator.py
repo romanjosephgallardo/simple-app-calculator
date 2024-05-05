@@ -67,14 +67,17 @@ while True:
     # Display the result
     if chosen_option == 1:
         result = first_number + second_number
-        format_and_display_result(f"{first_number} + {second_number}: {result}")
+        format_and_display_result(f"{first_number} + {second_number} = {result}")
     elif chosen_option == 2:
-        print(f"The difference is: {first_number - second_number}")
+        result = first_number - second_number
+        format_and_display_result(f"{first_number} - {second_number} = {result}")
     elif chosen_option == 3:
-        print(f"The product is: {first_number * second_number}")
+        result = first_number * second_number
+        format_and_display_result(f"{first_number} × {second_number} = {result}")
     elif chosen_option == 4:
         try:
-            print(f"The quotient is: {first_number / second_number}")
+            result = first_number * second_number
+            format_and_display_result(f"{first_number} ÷ {second_number} = {result}")
         except ZeroDivisionError:
             print("Error: Cannot divide by zero.")
             continue
