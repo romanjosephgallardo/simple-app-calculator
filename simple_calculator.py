@@ -1,8 +1,17 @@
 # pseudocode for simple calculator
 
+def welcome_message():
+    line = "—" * 40
+    title = "Welcome to Simple Calculator App!"
+    subtitle = "Let's do some math! :D"
+    print(line)
+    print(title.center(40, " "))
+    print(subtitle.center(40, " "))
+    print(line)
+
+
 # Ask user to choose from four math operations
-print("Welcome to Simple Calculator App! \n"
-      "Let's do some math! :D")
+welcome_message()
 while True:
     print("What would you like to do? \n"
           " 1. Addition (+) \n"
