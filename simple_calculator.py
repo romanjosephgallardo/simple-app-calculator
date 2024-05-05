@@ -24,7 +24,6 @@ def formatted_thank_u_message(thank_u):
                        f"{line} ")
     print(thank_u_message)
 
-
 # Ask user to choose from four math operations
 welcome_message()
 while True:
@@ -58,7 +57,8 @@ while True:
 
     # Display the result
     if chosen_option == 1:
-        print(f"The sum is: {first_number + second_number}")
+        result = first_number + second_number
+        print(f"{first_number} + {second_number}: {result}")
     elif chosen_option == 2:
         print(f"The difference is: {first_number - second_number}")
     elif chosen_option == 3:
