@@ -13,8 +13,8 @@ def welcome_message():
 def invalid_input_message(invalid_input):
     line = "—" * 50
     invalid_message = (f"{line} \n"
-               f"\x1B[3m{invalid_input.center(50)}\x1B[0m \n"
-               f"{line} ")
+                       f"\x1B[3m{invalid_input.center(50)}\x1B[0m \n"
+                       f"{line} ")
     print(invalid_message)
 
 
@@ -64,20 +64,21 @@ while True:
             continue
 
     # Ask user again if they want to try again
-    print(">>> Do you want to continue? \n"
-          " (a) Yes      (b) No")
-    try:
-        try_again = str(input(">>> Choose an option (a/b): "))
 
-        # If yes, repeat the process
-        if try_again == 'a':
-            continue
-        # If no, display "Thank you" and exit the program.
-        elif try_again == 'b':
-            print("Thank you for using Simple Calculator App! :D")
+    while True:
+        print(">>> Do you want to continue? \n"
+              " (a) Yes      (b) No")
+        try:
+            try_again = str(input(">>> Choose an option (a/b): "))
+            # If yes, repeat the process
+            if try_again == 'a':
+                break
+            # If no, display "Thank you" and exit the program.
+            elif try_again == 'b':
+                print("Thank you for using Simple Calculator App! :D")
+                exit()
+            if try_again not in ('a', 'b'):
+                invalid_input_message("Invalid choice. Please enter a valid letter")
+                continue
+        except:
             exit()
-        if try_again not in ('a', 'b'):
-            invalid_input_message("Invalid choice. Please enter a valid letter")
-            continue
-    except:
-        exit()
