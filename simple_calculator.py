@@ -71,11 +71,11 @@ while True:
         try:
             try_again = str(input(">>> Choose an option (a/b): "))
             # If yes, repeat the process
-            if try_again == 'a':
+            if try_again.lower() == 'a':
                 print("-" * 50)
                 break
             # If no, display "Thank you" and exit the program.
-            elif try_again == 'b':
+            elif try_again.lower() == 'b':
                 print("Thank you for using Simple Calculator App! :D")
                 break
             if try_again not in ('a', 'b'):
