@@ -31,16 +31,16 @@ while True:
     # Display the result
     if chosen_option == 1:
         print(f"The sum is: {first_number + second_number}")
-    if chosen_option == 2:
+    elif chosen_option == 2:
         print(f"The difference is: {first_number - second_number}")
-    if chosen_option == 3:
+    elif chosen_option == 3:
         print(f"The product is: {first_number * second_number}")
-    try:
-        if chosen_option == 4:
+    elif chosen_option == 4:
+        try:
             print(f"The quotient is: {first_number / second_number}")
-    except ZeroDivisionError:
-        print("Error: Cannot divide by zero.")
-        continue
+        except ZeroDivisionError:
+            print("Error: Cannot divide by zero.")
+            continue
 
     # Ask user again if they want to try again
     print("Do you want to continue? \n"
