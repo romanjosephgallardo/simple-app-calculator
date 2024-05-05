@@ -76,12 +76,12 @@ while True:
         format_and_display_result(f"{first_number} × {second_number} = {result}")
     elif chosen_option == 4:
         try:
-            result = first_number * second_number
-            format_and_display_result(f"{first_number} ÷ {second_number} = {result}")
+            result = first_number / second_number
         except ZeroDivisionError:
             print("Error: Cannot divide by zero.")
             continue
-
+        else:
+            format_and_display_result(f"{first_number} ÷ {second_number} = {result}")
     # Ask user again if they want to try again
     while True:
         print(">>> Do you want to continue? \n"
