@@ -98,13 +98,23 @@ while True:
     # Display the result
     if chosen_option == 1:
         result = first_number + second_number
-        format_and_display_result(f"{first_number} + {second_number} = {result}")
+        if result.is_integer():
+            format_and_display_result(f"{first_number} + {second_number} = {result}")
+        else:
+            format_and_display_result(f"{first_number} + {second_number} = {result:.3f}")
     elif chosen_option == 2:
         result = first_number - second_number
+        if result.is_integer():
+            format_and_display_result(f"{first_number} - {second_number} = {result}")
+        else:
+            format_and_display_result(f"{first_number} - {second_number} = {result:.3f}")
         format_and_display_result(f"{first_number} - {second_number} = {result}")
     elif chosen_option == 3:
         result = first_number * second_number
-        format_and_display_result(f"{first_number} × {second_number} = {result}")
+        if result.is_integer():
+            format_and_display_result(f"{first_number} × {second_number} = {result}")
+        else:
+            format_and_display_result(f"{first_number} × {second_number} = {result:.3f}")
     elif chosen_option == 4:
         try:
             result = first_number / second_number
@@ -112,8 +122,10 @@ while True:
             invalid_input_message("Error: Cannot divide by zero.")
             continue
         else:
-            format_and_display_result(f"{first_number} ÷ {second_number} = {result:.2f}")
-
+            if result.is_integer():
+                format_and_display_result(f"{first_number} ÷ {second_number} = {result}")
+            else:
+                format_and_display_result(f"{first_number} ÷ {second_number} = {result:.3f}")
     # Ask user again if they want to try again
     while True:
         print(">>> Do you want to continue? \n"
