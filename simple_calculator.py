@@ -26,15 +26,15 @@ def formatted_thank_u_message(thank_u):
     print(thank_u_message)
 
 
-def format_and_display_result(c_result):
+def format_and_display_result(computed_result):
     line = "—" * 50
     calculated_result = (f"{line} \n"
-                         f"\033[1m{c_result.center(50)}\033[0m \n"
+                         f"\033[1m{computed_result.center(50)}\033[0m \n"
                          f"{line} ")
     print(calculated_result)
 
 
-def get_number_input(prompt):
+def get_numbers_input(prompt):
     # Prompts the user to enter a numeric value.
     while True:
         user_input_number = input(prompt)
