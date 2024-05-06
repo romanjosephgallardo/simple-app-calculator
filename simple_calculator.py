@@ -8,6 +8,7 @@ def welcome_message():
 
 
 def invalid_input_message(invalid_input):
+    # Displays a formatted invalid message
     line = "—" * 50
     invalid_message = (f"{line} \n"
                        f"\x1B[3m{invalid_input.center(50)}\x1B[0m \n"
@@ -16,6 +17,7 @@ def invalid_input_message(invalid_input):
 
 
 def formatted_thank_u_message(thank_u):
+    # Displays a formatted thanking message
     line = "—" * 50
     thank_u_message = (f" \n"
                        f"{line}\n"
@@ -27,6 +29,7 @@ def formatted_thank_u_message(thank_u):
 
 
 def format_and_display_result(computed_result):
+    # Displays a formatted calculated result for operations
     line = "—" * 50
     calculated_result = (f"{line} \n"
                          f"\033[1m{computed_result.center(50)}\033[0m \n"
