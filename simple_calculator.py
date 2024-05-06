@@ -29,8 +29,8 @@ def formatted_thank_u_message(thank_u):
 def format_and_display_result(c_result):
     line = "—" * 50
     calculated_result = (f"{line} \n"
-                        f"\033[1m{c_result.center(50)}\033[0m \n"
-                        f"{line} ")
+                         f"\033[1m{c_result.center(50)}\033[0m \n"
+                         f"{line} ")
     print(calculated_result)
 
 
@@ -79,10 +79,10 @@ while True:
         try:
             result = first_number / second_number
         except ZeroDivisionError:
-            print("Error: Cannot divide by zero.")
+            invalid_input_message("Error: Cannot divide by zero.")
             continue
         else:
-            format_and_display_result(f"{first_number} ÷ {second_number} = {result}")
+            format_and_display_result(f"{first_number} ÷ {second_number} = {result:.2f}")
 
     # Ask user again if they want to try again
     while True:
