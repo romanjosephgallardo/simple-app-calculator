@@ -67,7 +67,7 @@ def get_numbers_input(prompt):
 
 def performing_addition(number_1, number_2):
     # Calculates the sum of two numbers
-    sum = first_number + second_number
+    sum = number_1 + number_2
     if sum.is_integer():
         format_and_display_result(f"{number_1} + {number_2} = {sum}")
     else:
