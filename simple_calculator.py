@@ -92,6 +92,20 @@ def performing_multiplication(number_1, number_2):
         format_and_display_result(f"{number_1} × {number_2} = {product:.3f}")
 
 
+def performing_division(number_1, number_2):
+    # Calculates the quotient of two numbers
+    try:
+        quotient = number_1 / number_2
+    except ZeroDivisionError:
+        invalid_input_message("Error: Cannot divide by zero.")
+        return
+    else:
+        if quotient.is_integer():
+            format_and_display_result(f"{number_1} ÷ {number_2} = {int(quotient)}")
+        else:
+            format_and_display_result(f"{number_1} ÷ {number_2} = {quotient:.3f}")
+
+
 # Ask user to choose from four math operations
 welcome_message()
 while True:
@@ -130,16 +144,7 @@ while True:
     elif chosen_option == 3:
         performing_multiplication(first_number, second_number)
     elif chosen_option == 4:
-        try:
-            result = first_number / second_number
-        except ZeroDivisionError:
-            invalid_input_message("Error: Cannot divide by zero.")
-            continue
-        else:
-            if result.is_integer():
-                format_and_display_result(f"{first_number} ÷ {second_number} = {result}")
-            else:
-                format_and_display_result(f"{first_number} ÷ {second_number} = {result:.3f}")
+        performing_division(first_number, second_number)
     # Ask user again if they want to try again
     while True:
         print(">>> Do you want to continue? \n"
