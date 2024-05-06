@@ -60,7 +60,7 @@ def get_numbers_input(prompt):
             except ValueError:
                 invalid_input_message("Invalid input. Enter a proper numeric value.")
             except:
-                print("Unexpected error occurred. Exiting the program :( ")
+                print("Unexpected error occurred. Exiting the program :(. ")
                 exit()
     return number
 
@@ -85,10 +85,10 @@ while True:
             break
 
     except ValueError:  # If a user enters other characters
-        invalid_input_message("Invalid choice. Please enter a valid number")
+        invalid_input_message("Invalid choice. Please enter a valid number.")
         continue
     except:
-        print("Unexpected error occurred. Exiting the program :( ")
+        print("Unexpected error occurred. Exiting the program :(. ")
         exit()
 
     # Ask user to input two numbers
@@ -142,7 +142,7 @@ while True:
                 break
             # If a user enters other characters without on the given option
             elif try_again not in ('a', 'b'):
-                invalid_input_message("Invalid choice. Please enter a valid letter")
+                invalid_input_message("Invalid choice. Please enter a valid letter.")
                 continue
         except:
             print("Unexpected error occurred. Exiting the program :(. ")
