@@ -131,13 +131,13 @@ while True:
         print(">>> Do you want to continue? \n"
               "    (a) Yes   (b) No")
         try:
-            try_again = str(input(">>> Choose an option (a/b): "))
+            try_again = str(input(">>> Choose an option (a/b): ")).lower()
             # If yes, repeat the process
-            if try_again.lower() == 'a':
+            if try_again == 'a':
                 print("-" * 50)
                 break
             # If no, display "Thank you" and exit the program.
-            elif try_again.lower() == 'b':
+            elif try_again == 'b':
                 formatted_thank_u_message("Thank you for using Simple Calculator App! :D")
                 break
             # If a user enters other characters without on the given option
