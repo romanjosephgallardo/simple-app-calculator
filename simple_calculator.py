@@ -141,7 +141,7 @@ while True:
                 formatted_thank_u_message("Thank you for using Simple Calculator App! :D")
                 break
             # If a user enters other characters without on the given option
-            if try_again not in ('a', 'b'):
+            elif try_again not in ('a', 'b'):
                 invalid_input_message("Invalid choice. Please enter a valid letter")
                 continue
         except:
