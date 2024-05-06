@@ -75,7 +75,7 @@ def performing_addition(number_1, number_2):
 
 
 def performing_subtraction(number_1, number_2):
-    # Calculates the sum of two numbers
+    # Calculates the difference of two numbers
     difference = number_1 - number_2
     if difference.is_integer():
         format_and_display_result(f"{number_1} - {number_2} = {difference}")
@@ -84,7 +84,7 @@ def performing_subtraction(number_1, number_2):
 
 
 def performing_multiplication(number_1, number_2):
-    # Calculates the sum of two numbers
+    # Calculates the product of two numbers
     product = number_1 * number_2
     if product.is_integer():
         format_and_display_result(f"{number_1} × {number_2} = {product}")
