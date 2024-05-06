@@ -62,7 +62,7 @@ while True:
         first_number = float(input(">>> Enter your first number: "))
         second_number = float(input(">>> Enter your second number: "))
     except ValueError:
-        invalid_input_message("Invalid input. Please enter numeric values only.")
+        invalid_input_message("Invalid input. Enter proper numeric values only.")
         continue
 
     # Display the result
