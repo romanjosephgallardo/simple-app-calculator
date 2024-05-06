@@ -34,6 +34,25 @@ def format_and_display_result(c_result):
     print(calculated_result)
 
 
+def get_number_input(prompt):
+    # Prompts the user to enter a numeric value.
+    while True:
+        user_input_number = input(prompt)
+        try:
+            #  Converting the input to an integer first if detects no decimal point
+            number = int(user_input_number)
+            break
+        except ValueError:
+            #  If conversion to integer fails, try converting to float
+            try:
+                number = float(user_input_number)
+                break
+            # Handles a non-numeric input for numbers
+            except ValueError:
+                invalid_input_message("Invalid input. Enter a proper numeric value.")
+    return number
+
+
 # Ask user to choose from four math operations
 welcome_message()
 while True:
@@ -58,23 +77,8 @@ while True:
         continue
 
     # Ask user to input two numbers
-    while True:
-        first_number = input(">>> Enter your first number: ")
-        second_number = input(">>> Enter your second number: ")
-        # Try converting inputs to integers first
-        try:
-            first_number = int(first_number)
-            second_number = int(second_number)
-            break
-        # If conversion to integers fails, try converting to floats
-        except ValueError:
-            try:
-                first_number = float(first_number)
-                second_number = float(second_number)
-                break
-            except ValueError:
-                invalid_input_message("Invalid input. Enter proper numeric values only.")
-                continue
+    first_number = get_number_input(">>> Enter your first number: ")
+    second_number = get_number_input(">>> Enter your second number: ")
 
     # Display the result
     if chosen_option == 1:
