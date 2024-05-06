@@ -74,6 +74,15 @@ def performing_addition(number_1, number_2):
         format_and_display_result(f"{number_1} + {number_2} = {sum:.3f}")
 
 
+def performing_subtraction(number_1, number_2):
+    # Calculates the sum of two numbers
+    difference = number_1 - number_2
+    if difference.is_integer():
+        format_and_display_result(f"{number_1} - {number_2} = {difference}")
+    else:
+        format_and_display_result(f"{number_1} - {number_2} = {difference:.3f}")
+
+
 # Ask user to choose from four math operations
 welcome_message()
 while True:
@@ -108,12 +117,7 @@ while True:
     if chosen_option == 1:
         performing_addition(first_number, second_number)
     elif chosen_option == 2:
-        result = first_number - second_number
-        if result.is_integer():
-            format_and_display_result(f"{first_number} - {second_number} = {result}")
-        else:
-            format_and_display_result(f"{first_number} - {second_number} = {result:.3f}")
-        format_and_display_result(f"{first_number} - {second_number} = {result}")
+        performing_subtraction(first_number, second_number)
     elif chosen_option == 3:
         result = first_number * second_number
         if result.is_integer():
