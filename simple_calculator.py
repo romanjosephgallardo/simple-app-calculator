@@ -41,8 +41,12 @@ def format_and_display_result(computed_result):
 
 def get_numbers_input(prompt):
     # Prompts the user to enter a numeric value.
+    global number
     while True:
         user_input_number = input(prompt)
+        if len(user_input_number) > 10:  # Checks if input exceeds 10 characters.
+            invalid_input_message("Maximum length reached (10 characters only).")
+            continue
         try:
             #  Converting the input to an integer first if detects no decimal point
             number = int(user_input_number)
