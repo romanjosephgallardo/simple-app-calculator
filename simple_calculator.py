@@ -30,7 +30,7 @@ def formatted_thank_u_message(thank_u):
 
 def format_and_display_result(computed_result):
     # Displays a formatted calculated result for operations
-    line = "—" * 50
+    line = ("—" * 40).center(50)
     calculated_result = (f"{line} \n"
                          f"\033[1m{computed_result.center(50)}\033[0m \n"
                          f"{line} ")
