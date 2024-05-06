@@ -123,7 +123,7 @@ while True:
                 invalid_input_message("Invalid choice. Please enter a valid letter")
                 continue
         except:
-            print("Unexpected error. Exiting the program.")
+            print("Unexpected error occurred. Exiting the program :(. ")
             exit()
 
     if try_again == "b":  # Checks if 'b' was pressed in the inner loop
