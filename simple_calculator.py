@@ -55,6 +55,9 @@ def get_numbers_input(prompt):
             # Handles a non-numeric input for numbers
             except ValueError:
                 invalid_input_message("Invalid input. Enter a proper numeric value.")
+            except:
+                print("Unexpected error occurred. Exiting the program :( ")
+                exit()
     return number
 
 
@@ -80,6 +83,9 @@ while True:
     except ValueError:  # If a user enters other characters
         invalid_input_message("Invalid choice. Please enter a valid number")
         continue
+    except:
+        print("Unexpected error occurred. Exiting the program :( ")
+        exit()
 
     # Ask user to input two numbers
     first_number = get_numbers_input(">>> Enter your first number: ")
