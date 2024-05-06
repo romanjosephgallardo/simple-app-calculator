@@ -59,8 +59,16 @@ while True:
 
     # Ask user to input two numbers
     try:
-        first_number = float(input(">>> Enter your first number: "))
-        second_number = float(input(">>> Enter your second number: "))
+        first_number = input(">>> Enter your first number: ")
+        second_number = input(">>> Enter your second number: ")
+        # Try converting inputs to integers first
+        try:
+            first_number = int(first_number)
+            second_number = int(second_number)
+        # If conversion to integers fails, try converting to floats
+        except ValueError:
+            first_number = float(first_number)
+            second_number = float(second_number)
     except ValueError:
         invalid_input_message("Invalid input. Enter proper numeric values only.")
         continue
