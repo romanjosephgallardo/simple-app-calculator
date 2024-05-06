@@ -87,9 +87,9 @@ def performing_multiplication(number_1, number_2):
     # Calculates the sum of two numbers
     product = number_1 * number_2
     if product.is_integer():
-        format_and_display_result(f"{number_1} - {number_2} = {product}")
+        format_and_display_result(f"{number_1} × {number_2} = {product}")
     else:
-        format_and_display_result(f"{number_1} - {number_2} = {product:.3f}")
+        format_and_display_result(f"{number_1} × {number_2} = {product:.3f}")
 
 
 # Ask user to choose from four math operations
