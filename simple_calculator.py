@@ -59,8 +59,8 @@ while True:
 
     # Ask user to input two numbers
     try:
-        first_number = int(input(">>> Enter your first number: "))
-        second_number = int(input(">>> Enter your second number: "))
+        first_number = float(input(">>> Enter your first number: "))
+        second_number = float(input(">>> Enter your second number: "))
     except ValueError:
         invalid_input_message("Invalid input. Please enter numeric values only.")
         continue
