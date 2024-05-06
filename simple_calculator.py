@@ -77,8 +77,8 @@ while True:
         continue
 
     # Ask user to input two numbers
-    first_number = get_number_input(">>> Enter your first number: ")
-    second_number = get_number_input(">>> Enter your second number: ")
+    first_number = get_numbers_input(">>> Enter your first number: ")
+    second_number = get_numbers_input(">>> Enter your second number: ")
 
     # Display the result
     if chosen_option == 1:
