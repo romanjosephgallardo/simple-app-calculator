@@ -16,7 +16,7 @@ def show_invalid_input_message(invalid_input):
     print(invalid_message)
 
 
-def formatted_thank_u_message(thank_u):
+def show_thank_u_message(thank_u):
     # Displays a formatted thanking message
     line = "—" * 50
     thank_u_message = (f" \n"
