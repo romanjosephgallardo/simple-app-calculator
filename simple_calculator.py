@@ -6,7 +6,7 @@ def show_welcome_message():
 
 
 def show_invalid_or_error_message(invalid_or_error):
-    # Displays a formatted invalid message
+    """ Displays a formatted invalid and error message """
     line = "—" * 50
     invalid_message = (f"{line} \n"
                        f"\x1B[3m{invalid_or_error.center(50)}\x1B[0m \n"
@@ -15,7 +15,7 @@ def show_invalid_or_error_message(invalid_or_error):
 
 
 def show_thank_u_message(thank_u):
-    # Displays a formatted thanking message
+    """ Displays a formatted thanking message """
     line = "—" * 50
     thank_u_message = (f" \n"
                        f"{line}\n"
@@ -27,7 +27,7 @@ def show_thank_u_message(thank_u):
 
 
 def format_and_display_result(computed_result):
-    # Displays a formatted calculated result for operations
+    """ Displays a formatted calculated result for operations"""
     line = ("—" * 40).center(50)
     calculated_result = (f"\n"
                          f"{line} \n"
@@ -38,7 +38,7 @@ def format_and_display_result(computed_result):
 
 
 def get_numbers_input(prompt):
-    # Prompts the user to enter a numeric value.
+    """ Prompts the user to enter a numeric value. """
     maximum_num_of_characters = 10
     global number
     while True:
@@ -65,7 +65,7 @@ def get_numbers_input(prompt):
 
 
 def perform_operation(number_1, number_2, operator):
-    # Perform the arithmetic operation based on the operator
+    """ Perform the arithmetic operation based on the operator """
     global result
     try:
         if operator == '+':  # In addition
