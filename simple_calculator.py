@@ -85,6 +85,8 @@ def perform_operation(number_1, number_2, operator):
             format_and_display_result(f"{number_1} {operator} {number_2} = {int(result)}")
         else:
             format_and_display_result(f"{number_1} {operator} {number_2} = {result:.3f}")
+    except OverflowError:
+        format_and_display_result("Result is too large or too small to be represented")
     except:
         print("Unexpected error occurred. Exiting the program :(. ")
         exit()
