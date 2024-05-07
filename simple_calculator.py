@@ -1,5 +1,3 @@
-# pseudocode for simple calculator
-
 def show_welcome_message():
     print("—" * 50)
     print("Welcome to Simple Calculator App!".center(50, " "))
