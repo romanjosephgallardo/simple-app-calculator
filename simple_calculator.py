@@ -67,23 +67,27 @@ def get_numbers_input(prompt):
 def perform_operation(number_1, number_2, operator):
     # Perform the arithmetic operation based on the operator
     global result
-    if operator == '+':  # In addition
-        result = number_1 + number_2
-    elif operator == '-':  # In subtraction
-        result = number_1 - number_2
-    elif operator == '×':  # In multiplication
-        result = number_1 * number_2
-    elif operator == '÷':  # In division
-        if number_2 == 0:
-            format_and_display_result("Error: Cannot divide by zero.")
-            return
-        else:
-            result = number_1 / number_2
+    try:
+        if operator == '+':  # In addition
+            result = number_1 + number_2
+        elif operator == '-':  # In subtraction
+            result = number_1 - number_2
+        elif operator == '×':  # In multiplication
+            result = number_1 * number_2
+        elif operator == '÷':  # In division
+            if number_2 == 0:
+                format_and_display_result("Error: Cannot divide by zero.")
+                return
+            else:
+                result = number_1 / number_2
 
-    if result.is_integer():
-        format_and_display_result(f"{number_1} {operator} {number_2} = {int(result)}")
-    else:
-        format_and_display_result(f"{number_1} {operator} {number_2} = {result:.3f}")
+        if result.is_integer():
+            format_and_display_result(f"{number_1} {operator} {number_2} = {int(result)}")
+        else:
+            format_and_display_result(f"{number_1} {operator} {number_2} = {result:.3f}")
+    except:
+        print("Unexpected error occurred. Exiting the program :(. ")
+        exit()
 
 
 # Ask user to choose from four math operations
