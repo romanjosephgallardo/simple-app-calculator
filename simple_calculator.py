@@ -1,3 +1,12 @@
+"""
+Simple Calculator App:
+This is a simple calculator app designed to perform basic arithmetic
+operations such as addition, subtraction, multiplication, and division.
+It provides users to input two numbers and choose the operation
+they want to perform.
+"""
+
+
 def show_welcome_message():
     print("—" * 50)
     print("Welcome to Simple Calculator App!".center(50, " "))
