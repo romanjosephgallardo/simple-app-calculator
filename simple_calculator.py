@@ -118,7 +118,7 @@ while True:
           " 5. Exit ")
 
     try:
-        chosen_option = int(input(">>> Choose an option: "))
+        chosen_option = int(input(">>> Choose an option (1/2/3/4/5): "))
         if chosen_option not in range(1, 6):  # Validation if user enters other numbers
             show_invalid_input_message("Invalid choice. Enter a number from 1 to 5 only.")
             continue
