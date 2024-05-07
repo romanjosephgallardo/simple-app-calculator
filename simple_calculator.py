@@ -96,7 +96,6 @@ def perform_operation(number_1, number_2, operator):
                 format_and_display_result("Error: Cannot divide by zero.")
                 return
 
-
         # Format the numbers for display
         number_1_formatted = format_number_with_parenthesis(number_1)
         number_2_formatted = format_number_with_parenthesis(number_2)
