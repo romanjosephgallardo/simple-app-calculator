@@ -89,9 +89,9 @@ def perform_operation(number_1, number_2, operator):
                 result = number_1 / number_2
 
         if result.is_integer():
-            format_and_display_result(f"{number_1} {operator} {number_2} = {int(result)}")
+            format_and_display_result(f"{number_1:,} {operator:} {number_2:,} = {int(result):,}")
         else:
-            format_and_display_result(f"{number_1} {operator} {number_2} = {result:.3f}")
+            format_and_display_result(f"{number_1:,} {operator:} {number_2:,} = {result:,.3f}")
     except OverflowError:
         format_and_display_result("Result is too large or too small to be represented")
     except:
