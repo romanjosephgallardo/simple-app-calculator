@@ -54,6 +54,7 @@ def get_numbers_input(prompt):
         if len(user_input_number) > maximum_num_of_characters:  # Checks if input exceeds 10 characters.
             show_invalid_or_error_message("Maximum length reached (10 characters only).")
             continue
+
         try:
             #  Converting the input to an integer first if detects no decimal point
             number = int(user_input_number)
@@ -64,6 +65,9 @@ def get_numbers_input(prompt):
                 number = float(user_input_number)
                 break
             # Handles a non-numeric input for numbers
+            except KeyboardInterrupt:
+                print("\n Keyboard interrupt detected. Exiting the program...")
+                exit()
             except ValueError:
                 show_invalid_or_error_message("Invalid input. Enter a proper numeric value.")
             except:
@@ -133,7 +137,9 @@ while True:
         if chosen_option == 5:
             show_thank_u_message("Thank you for using Simple Calculator App! :D")
             break
-
+    except KeyboardInterrupt:
+        print("\n Keyboard interrupt detected. Exiting the program...")
+        exit()
     except ValueError:  # If a user enters other characters
         show_invalid_or_error_message("Invalid choice. Please enter a valid number.")
         continue
@@ -173,6 +179,9 @@ while True:
             elif try_again not in ('a', 'b'):
                 show_invalid_or_error_message("Invalid choice. Please enter 'a' or 'b' only.")
                 continue
+        except KeyboardInterrupt:
+            print("\n Keyboard interrupt detected. Exiting the program...")
+            exit()
         except:
             show_invalid_or_error_message("Unexpected error occurred. Exiting the program :(. ")
             exit()
