@@ -7,7 +7,7 @@ def show_welcome_message():
     print("—" * 50)
 
 
-def invalid_input_message(invalid_input):
+def show_invalid_input_message(invalid_input):
     # Displays a formatted invalid message
     line = "—" * 50
     invalid_message = (f"{line} \n"
