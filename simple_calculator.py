@@ -90,11 +90,12 @@ def perform_operation(number_1, number_2, operator):
         elif operator == '×':  # In multiplication
             result = number_1 * number_2
         elif operator == '÷':  # In division
-            if number_2 == 0:
+            try:
+                result = number_1 / number_2
+            except ZeroDivisionError:
                 format_and_display_result("Error: Cannot divide by zero.")
                 return
-            else:
-                result = number_1 / number_2
+
 
         # Format the numbers for display
         number_1_formatted = format_number_with_parenthesis(number_1)
