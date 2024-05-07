@@ -1,6 +1,6 @@
 # pseudocode for simple calculator
 
-def welcome_message():
+def show_welcome_message():
     print("—" * 50)
     print("Welcome to Simple Calculator App!".center(50, " "))
     print("Let's do some math! :D".center(50, " "))
