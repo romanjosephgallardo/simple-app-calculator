@@ -41,10 +41,11 @@ def format_and_display_result(computed_result):
 
 def get_numbers_input(prompt):
     # Prompts the user to enter a numeric value.
+    maximum_num_of_characters = 10
     global number
     while True:
         user_input_number = input(prompt)
-        if len(user_input_number) > 10:  # Checks if input exceeds 10 characters.
+        if len(user_input_number) > maximum_num_of_characters:  # Checks if input exceeds 10 characters.
             invalid_input_message("Maximum length reached (10 characters only).")
             continue
         try:
@@ -145,6 +146,7 @@ while True:
         performing_multiplication(first_number, second_number)
     elif chosen_option == 4:
         performing_division(first_number, second_number)
+
     # Ask user again if they want to try again
     while True:
         print(">>> Do you want to continue? \n"
