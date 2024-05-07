@@ -72,6 +72,14 @@ def get_numbers_input(prompt):
     return number
 
 
+def format_number_with_parenthesis(number):
+    """Formats a number with parenthesis if it's negative."""
+    if number < 0:
+        return f"(-{-number:,})"
+    else:
+        return f"{number:,}"
+
+
 def perform_operation(number_1, number_2, operator):
     """ Perform the arithmetic operation based on the operator """
     try:
@@ -88,19 +96,11 @@ def perform_operation(number_1, number_2, operator):
             else:
                 result = number_1 / number_2
 
-        # Check if number_1 is negative and add parenthesis for a formatted output
-        if number_1 < 0:
-            number_1_formatted = f"(-{-number_1:,})"
-        else:
-            number_1_formatted = f"{number_1:,}"
+        # Format the numbers for display
+        number_1_formatted = format_number_with_parenthesis(number_1)
+        number_2_formatted = format_number_with_parenthesis(number_2)
 
-        # Check if number_2 is negative and add parenthesis for a formatted output
-        if number_2 < 0:
-            number_2_formatted = f"(-{-number_2:,})"
-        else:
-            number_2_formatted = f"{number_2:,}"
-
-        #Checks if the result is in integer
+        # Checks if the result is in integer
         if result.is_integer():
             # Displays an output result w/o decimal
             format_and_display_result(f"{number_1_formatted} {operator:} {number_2_formatted} = {int(result):,}")
