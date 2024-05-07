@@ -40,7 +40,6 @@ def format_and_display_result(computed_result):
 def get_numbers_input(prompt):
     """ Prompts the user to enter a numeric value. """
     maximum_num_of_characters = 10
-    global number
     while True:
         user_input_number = input(prompt)
         if len(user_input_number) > maximum_num_of_characters:  # Checks if input exceeds 10 characters.
@@ -66,7 +65,6 @@ def get_numbers_input(prompt):
 
 def perform_operation(number_1, number_2, operator):
     """ Perform the arithmetic operation based on the operator """
-    global result
     try:
         if operator == '+':  # In addition
             result = number_1 + number_2
@@ -148,7 +146,7 @@ while True:
                 break
             # If a user enters other characters without on the given option
             elif try_again not in ('a', 'b'):
-                show_invalid_or_error_message("Invalid choice. Please enter a valid letter.")
+                show_invalid_or_error_message("Invalid choice. Please enter 'a' or 'b' only.")
                 continue
         except:
             show_invalid_or_error_message("Unexpected error occurred. Exiting the program :(. ")
