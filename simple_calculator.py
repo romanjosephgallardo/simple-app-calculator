@@ -66,45 +66,26 @@ def get_numbers_input(prompt):
     return number
 
 
-def performing_addition(number_1, number_2):
-    # Calculates the sum of two numbers
-    sum = number_1 + number_2
-    if sum.is_integer():
-        format_and_display_result(f"{number_1} + {number_2} = {sum}")
-    else:
-        format_and_display_result(f"{number_1} + {number_2} = {sum:.3f}")
-
-
-def performing_subtraction(number_1, number_2):
-    # Calculates the difference of two numbers
-    difference = number_1 - number_2
-    if difference.is_integer():
-        format_and_display_result(f"{number_1} - {number_2} = {difference}")
-    else:
-        format_and_display_result(f"{number_1} - {number_2} = {difference:.3f}")
-
-
-def performing_multiplication(number_1, number_2):
-    # Calculates the product of two numbers
-    product = number_1 * number_2
-    if product.is_integer():
-        format_and_display_result(f"{number_1} × {number_2} = {product}")
-    else:
-        format_and_display_result(f"{number_1} × {number_2} = {product:.3f}")
-
-
-def performing_division(number_1, number_2):
-    # Calculates the quotient of two numbers
-    try:
-        quotient = number_1 / number_2
-    except ZeroDivisionError:
-        show_invalid_input_message("Error: Cannot divide by zero.")
-        return
-    else:
-        if quotient.is_integer():
-            format_and_display_result(f"{number_1} ÷ {number_2} = {int(quotient)}")
+def perform_operation(number_1, number_2, operator):
+    # Perform the arithmetic operation based on the operator
+    global result
+    if operator == '+':  # In addition
+        result = number_1 + number_2
+    elif operator == '-':  # In subtraction
+        result = number_1 - number_2
+    elif operator == '×':  # In multiplication
+        result = number_1 * number_2
+    elif operator == '÷':  # In division
+        if number_2 == 0:
+            format_and_display_result("Error: Cannot divide by zero.")
+            return
         else:
-            format_and_display_result(f"{number_1} ÷ {number_2} = {quotient:.3f}")
+            result = number_1 / number_2
+
+    if result.is_integer():
+        format_and_display_result(f"{number_1} {operator} {number_2} = {int(result)}")
+    else:
+        format_and_display_result(f"{number_1} {operator} {number_2} = {result:.3f}")
 
 
 # Ask user to choose from four math operations
@@ -139,13 +120,13 @@ while True:
 
     # Display the result
     if chosen_option == 1:
-        performing_addition(first_number, second_number)
+        perform_operation(first_number, second_number, '+')
     elif chosen_option == 2:
-        performing_subtraction(first_number, second_number)
+        perform_operation(first_number, second_number, '-')
     elif chosen_option == 3:
-        performing_multiplication(first_number, second_number)
+        perform_operation(first_number, second_number, '×')
     elif chosen_option == 4:
-        performing_division(first_number, second_number)
+        perform_operation(first_number, second_number, '÷')
 
     # Ask user again if they want to try again
     while True:
