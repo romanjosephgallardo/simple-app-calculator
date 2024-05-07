@@ -46,7 +46,7 @@ def get_numbers_input(prompt):
     while True:
         user_input_number = input(prompt)
         if len(user_input_number) > maximum_num_of_characters:  # Checks if input exceeds 10 characters.
-            invalid_input_message("Maximum length reached (10 characters only).")
+            show_invalid_input_message("Maximum length reached (10 characters only).")
             continue
         try:
             #  Converting the input to an integer first if detects no decimal point
@@ -59,7 +59,7 @@ def get_numbers_input(prompt):
                 break
             # Handles a non-numeric input for numbers
             except ValueError:
-                invalid_input_message("Invalid input. Enter a proper numeric value.")
+                show_invalid_input_message("Invalid input. Enter a proper numeric value.")
             except:
                 print("Unexpected error occurred. Exiting the program :(. ")
                 exit()
@@ -98,7 +98,7 @@ def performing_division(number_1, number_2):
     try:
         quotient = number_1 / number_2
     except ZeroDivisionError:
-        invalid_input_message("Error: Cannot divide by zero.")
+        show_invalid_input_message("Error: Cannot divide by zero.")
         return
     else:
         if quotient.is_integer():
@@ -108,7 +108,7 @@ def performing_division(number_1, number_2):
 
 
 # Ask user to choose from four math operations
-welcome_message()
+show_welcome_message()
 while True:
     print(">>> What would you like to do? \n"
           " 1. Addition (+) \n"
@@ -120,14 +120,14 @@ while True:
     try:
         chosen_option = int(input(">>> Choose an option: "))
         if chosen_option not in range(1, 6):  # Validation if user enters other numbers
-            invalid_input_message("Invalid choice. Enter a number from 1 to 5 only.")
+            show_invalid_input_message("Invalid choice. Enter a number from 1 to 5 only.")
             continue
         if chosen_option == 5:
-            formatted_thank_u_message("Thank you for using Simple Calculator App! :D")
+            show_thank_u_message("Thank you for using Simple Calculator App! :D")
             break
 
     except ValueError:  # If a user enters other characters
-        invalid_input_message("Invalid choice. Please enter a valid number.")
+        show_invalid_input_message("Invalid choice. Please enter a valid number.")
         continue
     except:
         print("Unexpected error occurred. Exiting the program :(. ")
@@ -159,11 +159,11 @@ while True:
                 break
             # If no, display "Thank you" and exit the program.
             elif try_again == 'b':
-                formatted_thank_u_message("Thank you for using Simple Calculator App! :D")
+                show_thank_u_message("Thank you for using Simple Calculator App! :D")
                 break
             # If a user enters other characters without on the given option
             elif try_again not in ('a', 'b'):
-                invalid_input_message("Invalid choice. Please enter a valid letter.")
+                show_invalid_input_message("Invalid choice. Please enter a valid letter.")
                 continue
         except:
             print("Unexpected error occurred. Exiting the program :(. ")
