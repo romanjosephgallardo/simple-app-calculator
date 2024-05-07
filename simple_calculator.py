@@ -88,13 +88,20 @@ def perform_operation(number_1, number_2, operator):
             else:
                 result = number_1 / number_2
 
-        # Checks if the result is in integer
+        # Check if number_1 is negative and add parentheses for a formatted output
+        if number_1 < 0:
+            number_1_formatted = f"(-{-number_1:,})"
+        else:
+            number_1_formatted = f"{number_1:,}"
+
+        #Checks if the result is in integer
         if result.is_integer():
             # Displays an output result w/o decimal
-            format_and_display_result(f"{number_1:,} {operator:} {number_2:,} = {int(result):,}")
+            format_and_display_result(f"{number_1_formatted} {operator:} {number_2} = {int(result):,}")
         else:
             # Displays an output result w/ decimal
-            format_and_display_result(f"{number_1:,} {operator:} {number_2:,} = {result:,.3f}")
+            format_and_display_result(f"{number_1_formatted} {operator:} {number_2} = {result:,.3f}")
+
     except OverflowError:
         format_and_display_result("Result is too large or too small to be represented")
     except:
