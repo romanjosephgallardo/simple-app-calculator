@@ -17,9 +17,11 @@ def show_welcome_message():
 def show_invalid_or_error_message(invalid_or_error):
     """ Displays a formatted invalid and error message """
     line = "—" * 50
-    invalid_message = (f"{line} \n"
+    invalid_message = (f"\n"
+                       f"{line} \n"
                        f"\x1B[3m{invalid_or_error.center(50)}\x1B[0m \n"
-                       f"{line} ")
+                       f"{line} "
+                       f"\n")
     print(invalid_message)
 
 
@@ -61,7 +63,7 @@ def get_numbers_input(prompt):
             number = int(user_input_number)
             break
         except KeyboardInterrupt:
-            print("\n Keyboard interrupt detected. Exiting the program...")
+            show_invalid_or_error_message("Keyboard interrupt detected. Exiting the program.")
             exit()
         except ValueError:
             #  If conversion to integer fails, try converting to float
@@ -70,7 +72,7 @@ def get_numbers_input(prompt):
                 break
             # Handles a non-numeric input for numbers
             except KeyboardInterrupt:
-                print("\n Keyboard interrupt detected. Exiting the program...")
+                show_invalid_or_error_message("Keyboard interrupt detected. Exiting the program.")
                 exit()
             except ValueError:
                 show_invalid_or_error_message("Invalid input. Enter a proper numeric value.")
@@ -142,7 +144,7 @@ while True:
             show_thank_u_message("Thank you for using Simple Calculator App! :D")
             break
     except KeyboardInterrupt:
-        print("\n Keyboard interrupt detected. Exiting the program...")
+        show_invalid_or_error_message("Keyboard interrupt detected. Exiting the program.")
         exit()
     except ValueError:  # If a user enters other characters
         show_invalid_or_error_message("Invalid choice. Please enter a valid number.")
@@ -184,7 +186,7 @@ while True:
                 show_invalid_or_error_message("Invalid choice. Please enter 'a' or 'b' only.")
                 continue
         except KeyboardInterrupt:
-            print("\n Keyboard interrupt detected. Exiting the program...")
+            show_invalid_or_error_message("Keyboard interrupt detected. Exiting the program.")
             exit()
         except:
             show_invalid_or_error_message("Unexpected error occurred. Exiting the program :(. ")
