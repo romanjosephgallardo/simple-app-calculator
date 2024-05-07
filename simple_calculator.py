@@ -5,11 +5,11 @@ def show_welcome_message():
     print("—" * 50)
 
 
-def show_invalid_input_message(invalid_input):
+def show_invalid_or_error_message(invalid_or_error):
     # Displays a formatted invalid message
     line = "—" * 50
     invalid_message = (f"{line} \n"
-                       f"\x1B[3m{invalid_input.center(50)}\x1B[0m \n"
+                       f"\x1B[3m{invalid_or_error.center(50)}\x1B[0m \n"
                        f"{line} ")
     print(invalid_message)
 
@@ -44,7 +44,7 @@ def get_numbers_input(prompt):
     while True:
         user_input_number = input(prompt)
         if len(user_input_number) > maximum_num_of_characters:  # Checks if input exceeds 10 characters.
-            show_invalid_input_message("Maximum length reached (10 characters only).")
+            show_invalid_or_error_message("Maximum length reached (10 characters only).")
             continue
         try:
             #  Converting the input to an integer first if detects no decimal point
@@ -57,7 +57,7 @@ def get_numbers_input(prompt):
                 break
             # Handles a non-numeric input for numbers
             except ValueError:
-                show_invalid_input_message("Invalid input. Enter a proper numeric value.")
+                show_invalid_or_error_message("Invalid input. Enter a proper numeric value.")
             except:
                 print("Unexpected error occurred. Exiting the program :(. ")
                 exit()
@@ -88,7 +88,7 @@ def perform_operation(number_1, number_2, operator):
     except OverflowError:
         format_and_display_result("Result is too large or too small to be represented")
     except:
-        print("Unexpected error occurred. Exiting the program :(. ")
+        show_invalid_or_error_message("Unexpected error occurred. Exiting the program :(. ")
         exit()
 
 
@@ -105,17 +105,17 @@ while True:
     try:
         chosen_option = int(input(">>> Choose an option (1/2/3/4/5): "))
         if chosen_option not in range(1, 6):  # Validation if user enters other numbers
-            show_invalid_input_message("Invalid choice. Enter a number from 1 to 5 only.")
+            show_invalid_or_error_message("Invalid choice. Enter a number from 1 to 5 only.")
             continue
         if chosen_option == 5:
             show_thank_u_message("Thank you for using Simple Calculator App! :D")
             break
 
     except ValueError:  # If a user enters other characters
-        show_invalid_input_message("Invalid choice. Please enter a valid number.")
+        show_invalid_or_error_message("Invalid choice. Please enter a valid number.")
         continue
     except:
-        print("Unexpected error occurred. Exiting the program :(. ")
+        show_invalid_or_error_message("Unexpected error occurred. Exiting the program :(. ")
         exit()
 
     # Ask user to input two numbers
@@ -148,10 +148,10 @@ while True:
                 break
             # If a user enters other characters without on the given option
             elif try_again not in ('a', 'b'):
-                show_invalid_input_message("Invalid choice. Please enter a valid letter.")
+                show_invalid_or_error_message("Invalid choice. Please enter a valid letter.")
                 continue
         except:
-            print("Unexpected error occurred. Exiting the program :(. ")
+            show_invalid_or_error_message("Unexpected error occurred. Exiting the program :(. ")
             exit()
 
     if try_again == "b":  # Checks if 'b' was pressed in the inner loop
