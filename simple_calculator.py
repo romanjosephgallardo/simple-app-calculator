@@ -50,15 +50,17 @@ def get_numbers_input(prompt):
     """ Prompts the user to enter a numeric value. """
     maximum_num_of_characters = 10
     while True:
-        user_input_number = input(prompt)
-        if len(user_input_number) > maximum_num_of_characters:  # Checks if input exceeds 10 characters.
-            show_invalid_or_error_message("Maximum length reached (10 characters only).")
-            continue
-
         try:
+            user_input_number = input(prompt)
+            if len(user_input_number) > maximum_num_of_characters:  # Checks if input exceeds 10 characters.
+                show_invalid_or_error_message("Maximum length reached (10 characters only).")
+                continue
             #  Converting the input to an integer first if detects no decimal point
             number = int(user_input_number)
             break
+        except KeyboardInterrupt:
+            print("\n Keyboard interrupt detected. Exiting the program...")
+            exit()
         except ValueError:
             #  If conversion to integer fails, try converting to float
             try:
