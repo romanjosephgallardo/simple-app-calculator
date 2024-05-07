@@ -49,9 +49,11 @@ def format_and_display_result(computed_result):
 def get_numbers_input(prompt):
     """ Prompts the user to enter a numeric value. """
     maximum_num_of_characters = 10
+
     while True:
         try:
             user_input_number = input(prompt)
+            # Check if input exceeds 10 characters
             if len(user_input_number) > maximum_num_of_characters:  # Checks if input exceeds 10 characters.
                 show_invalid_or_error_message("Maximum length reached (10 characters only).")
                 continue
